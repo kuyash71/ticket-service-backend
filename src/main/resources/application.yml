@@ -1,0 +1,31 @@
+server:
+  port: 8080
+
+error:
+    include-message: always
+    include-binding-errors: always
+    include-stacktrace: always
+
+logging:
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level [%X{requestId}] %logger{36} - %msg%n"
+  level:
+    root: INFO
+    http: INFO
+    
+spring:
+  datasource:
+    url: jdbc:postgresql://postgres:5432/ticketdb
+    username: ticketuser
+    password: ticketpass
+  mvc:
+    throw-exception-if-no-handler-found: true
+  web:
+    resources:
+      add-mappings: false
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true

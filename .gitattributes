@@ -1,0 +1,52 @@
+####################################
+# GENEL METİN DAVRANIŞI
+####################################
+
+# Tüm metin dosyalarında otomatik satır sonu yönetimi
+* text=auto
+
+# Backend kaynak dosyaları (her zaman LF)
+*.java     text eol=lf
+
+####################################
+# KONFİGÜRASYON DOSYALARI
+####################################
+
+*.yml      text eol=lf
+*.yaml     text eol=lf
+*.json     text eol=lf
+*.xml      text eol=lf
+*.properties text eol=lf
+*.env      text eol=lf
+
+####################################
+# LOG VE ÇIKTI DOSYALARI
+####################################
+
+*.log      -diff
+*.out      -diff
+
+####################################
+# BINARY DOSYALAR (DIFF YOK)
+####################################
+
+*.jar      binary
+*.exe      binary
+*.dll      binary
+
+####################################
+# GÖRSELLER
+####################################
+
+*.png      binary
+*.jpg      binary
+*.jpeg     binary
+*.gif      binary
+*.svg      text
+
+####################################
+# DOKÜMANTASYON
+####################################
+
+*.md       text eol=lf
+*.txt      text eol=lf
