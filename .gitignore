@@ -1,5 +1,4 @@
 HELP.md
-target/
 .mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
@@ -15,3 +14,19 @@ target/
 
 ### VS Code ###
 .vscode/
+
+### IntelliJ ###
+.idea/
+*.iml
+*.iws
+
+# Maven
+target/
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
