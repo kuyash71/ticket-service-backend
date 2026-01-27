@@ -119,4 +119,18 @@ public class GlobalExceptionHandler {
       )
     );
   }
+
+  @ExceptionHandler(WorklogNotFoundException.class)
+  public ResponseEntity<ApiErrorResponse> handleWorklogNotFound(
+    WorklogNotFoundException ex
+  ) {
+    return ResponseEntity.status(HttpStatus.NOT_FOUND).body(
+      new ApiErrorResponse(
+        HttpStatus.NOT_FOUND.value(),
+        "NOT_FOUND",
+        ex.getMessage(),
+        LocalDateTime.now()
+      )
+    );
+  }
 }

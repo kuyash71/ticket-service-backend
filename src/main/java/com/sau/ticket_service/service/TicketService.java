@@ -116,4 +116,37 @@ public class TicketService {
     ticketRepository.deleteById(id);
     log.info("Ticket deleted. ticketId={}", id);
   }
+
+  public TicketResponseDTO updateAssignee(Long id, String assigneeId) {
+    Ticket ticket = ticketRepository
+      .findById(id)
+      .orElseThrow(() -> new TicketNotFoundException(id));
+
+    String old = ticket.getAssigneeId();
+    ticket.setAssigneeId(assigneeId);
+
+    Ticket saved = ticketRepository.save(ticket);
+    log.info(
+      "Ticket assignee changed. ticketId={}, {} -> {}",
+      id,
+      old,
+      assigneeId
+    );
+
+    return TicketResponseDTO.from(saved);
+  }
+
+  public TicketResponseDTO clearAssignee(Long id) {
+    Ticket ticket = ticketRepository
+      .findById(id)
+      .orElseThrow(() -> new TicketNotFoundException(id));
+
+    String old = ticket.getAssigneeId();
+    ticket.setAssigneeId(null);
+
+    Ticket saved = ticketRepository.save(ticket);
+    log.info("Ticket assignee cleared. ticketId={}, oldAssignee={}", id, old);
+
+    return TicketResponseDTO.from(saved);
+  }
 }
