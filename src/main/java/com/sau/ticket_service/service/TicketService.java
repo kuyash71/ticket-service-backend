@@ -101,8 +101,11 @@ public class TicketService {
     return switch (from) {
       case OPEN -> (to == TicketStatus.IN_PROGRESS ||
         to == TicketStatus.CLOSED);
-      case IN_PROGRESS -> (to == TicketStatus.RESOLVED ||
+      case IN_PROGRESS -> (to == TicketStatus.WAITING_CUSTOMER ||
+        to == TicketStatus.RESOLVED ||
         to == TicketStatus.OPEN);
+      case WAITING_CUSTOMER -> (to == TicketStatus.IN_PROGRESS ||
+        to == TicketStatus.RESOLVED);
       case RESOLVED -> (to == TicketStatus.CLOSED ||
         to == TicketStatus.IN_PROGRESS);
       case CLOSED -> false;
