@@ -30,3 +30,5 @@ target/
 .DS_Store
 Thumbs.db
 
+# AI agent private context
+docs/temp/
