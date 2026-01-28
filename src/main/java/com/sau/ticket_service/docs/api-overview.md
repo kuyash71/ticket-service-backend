@@ -138,7 +138,8 @@ Response: **200 OK** (TicketResponseDTO)
 ### Allowed transitions (current implementation)
 
 - `OPEN` → `IN_PROGRESS` or `CLOSED`
-- `IN_PROGRESS` → `RESOLVED` or `OPEN`
+- `IN_PROGRESS` → `RESOLVED` or `OPEN` or `WAITING_CUSTOMER`
+- `WAITING_CUSTOMER` → `IN_PROGRESS` or `RESOLVED`
 - `RESOLVED` → `CLOSED` or `IN_PROGRESS`
 - `CLOSED` → (no transitions allowed)
 
