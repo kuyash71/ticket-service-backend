@@ -266,29 +266,43 @@ Dates are defined in sprint form and may be adjusted according to meeting feedba
 
 - Backend skeleton, API contract, architecture documentation ✅
 - Analysis document ✅
-- Mock screen wireframes ✅
+- Lo-fi Mock screen wireframes ✅
 
 ### Sprint 1
 
 - Keycloak integration (login + role model)
-- Authorization matrix enforcement
+- Security Scenarios
 - Customer “own tickets only” rule
+- Login/Logout tests
+- Role enforcement
 
 ### Sprint 2
 
 - Comments (internal / external)
 - Attachments (upload + storage + basic validation)
+- Hi-fi mock screen wireframes
+- Finale UI/UX designs
+- Differentation of Public and Internal Worklog
+- Basic layout and i18n via React
+- Ticket list/detail pages
 
 ### Sprint 3
 
 - SLA definition and SLA risk/breach calculation
 - Reporting (status distribution, SLA compliance)
+- Manager Dashboard (read-only)
+- Dashboard via React + UI Polish
+- Basic Logging & Monitoring
 
 ### Sprint 4
 
 - Logging pipeline → OpenSearch (optional Kafka)
 - OpenTelemetry metrics and traces
 - Dashboards
+- Full UI Integration
+- Validation hardening
+- E2E Demo
+- Deploy/Docker polish
 
 ### Sprint 5 (Polish & Demo)
 
