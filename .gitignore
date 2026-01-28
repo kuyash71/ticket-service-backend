@@ -31,4 +31,4 @@ target/
 Thumbs.db
 
 # AI agent private context
-docs/temp/
+src/main/java/com/sau/ticket_service/docs/temp/
